@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RZAWebsite_JC.Components;
 using RZAWebsite_JC.Models;
+using MudBlazor.Services;
 
 namespace RZAWebsite_JC
 {
@@ -13,6 +14,8 @@ namespace RZAWebsite_JC
             // Add services to the container.
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
+
+            builder.Services.AddMudServices();
 
             builder.Services.AddDbContext<TlS2300716RzaContext>(Options =>
                 Options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),

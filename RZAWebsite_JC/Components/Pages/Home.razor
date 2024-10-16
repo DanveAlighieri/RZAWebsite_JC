@@ -2,6 +2,30 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Welcome to Riget Zoo Adventures!</h1>
 
-Welcome to your new app.
+
+<dl>
+    <dt>Our Location</dt>
+    <dd>Scrab lane</dd>
+    <dd> Scheemsham</dd>
+    <dd>Schromb</dd>
+    <dd>Sc6 9Fd</dd>
+</dl>
+<div></div>
+<dl>
+    <dt>Prices For Tickets</dt>
+    <dd>Children Under 3 - £5:99</dd>
+    <dd>Children 3 -15 - £9:99</dd>
+    <dd>Schromb</dd>
+    <dd>Sc6 9Fd</dd>
+</dl>
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme"/>
+<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode"/>
+@code{
+    private MudTheme _theme = new();
+    private bool _isDarkMode;
+}
+
+<div></div>
