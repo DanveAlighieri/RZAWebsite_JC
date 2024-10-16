@@ -26,3 +26,28 @@
         _drawerOpen = !_drawerOpen;
     }
 }
+
+<MudThemeProvider Theme="MyCustomTheme" />
+@code {
+    MudTheme MyCustomTheme = new MudTheme()
+        {
+            PaletteLight = new PaletteLight()
+            {
+                Primary = Colors.Blue.Default,
+                Secondary = Colors.Green.Accent4,
+                AppbarBackground = Colors.LightGreen.Lighten1,
+                Background = Colors.LightGreen.Lighten4,
+                
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            },
+
+            LayoutProperties = new LayoutProperties()
+            {
+                DrawerWidthLeft = "260px",
+                DrawerWidthRight = "300px"
+            }
+        };
+}
