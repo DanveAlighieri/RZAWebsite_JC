@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using RZAWebsite_JC.Components;
 using RZAWebsite_JC.Models;
 using MudBlazor.Services;
+using RZAWebsite_JC.Services;
 
 namespace RZAWebsite_JC
 {
@@ -20,6 +21,8 @@ namespace RZAWebsite_JC
             builder.Services.AddDbContext<TlS2300716RzaContext>(Options =>
                 Options.UseMySql(builder.Configuration.GetConnectionString("MySqlConnection"),
                 new MySqlServerVersion(new Version(8, 0, 29))));
+
+            builder.Services.AddScoped<CustomerService>();
 
             var app = builder.Build();
 
