@@ -4,34 +4,36 @@
 
 @page "/Register"
 
-<h3>TempRegister</h3>
+<h1>Register</h1>
 
 <div>
     <label>Username</label>
-    <input>
+    <input @bind=NewCustomer.Username>
 </div>
 <div>
     <label>Password</label>
-    <input>
+    <input type="password" @bind=NewCustomer.Password>
 </div>
 <div>
     <label>First Name</label>
-    <input>
+    <input @bind=NewCustomer.FirstName>
 </div>
 <div>
     <label>Last Name</label>
-    <input>
+    <input @bind=NewCustomer.LastName>
 </div>
 <div>
     <label>Email</label>
-    <input>
+    <input @bind=NewCustomer.Email>
 </div>
 <button @onclick=RegisterCustomer>Register</button>
 
 @code {
+    private Customer NewCustomer = new Customer();
 
     private async Task RegisterCustomer()
-    {                                      
+    {
+        await CustomerService.AddCustomerAsync(NewCustomer);
         Console.WriteLine("button was clicked");
     }
 

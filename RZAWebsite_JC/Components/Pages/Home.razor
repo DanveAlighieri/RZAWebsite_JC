@@ -4,7 +4,6 @@
 
 <h1>Welcome to Riget Zoo Adventures!</h1>
 
-
 <dl>
     <dt>Our Location</dt>
     <dd>Scrab lane</dd>
@@ -20,12 +19,5 @@
     <dd>Schromb</dd>
     <dd>Sc6 9Fd</dd>
 </dl>
-
-<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme"/>
-<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode"/>
-@code{
-    private MudTheme _theme = new();
-    private bool _isDarkMode;
-}
-
 <div></div>
+<MudImage Src="/Images/Hummingbird image.jpg" Alt="Jeremy the Hummingbird" Elevation="25" Class="rounded-lg" />

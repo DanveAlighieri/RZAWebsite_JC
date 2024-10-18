@@ -1,9 +1,13 @@
-﻿@page "/Accessibility"
+﻿
+@page "/Accessibility"
 
 <PageTitle>Accessibility</PageTitle>
 
-<h3>Accessibility</h3>
+<h1>Accessibility</h1>
 
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
+<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
 @code {
-
+    private MudTheme _theme = new();
+    private bool _isDarkMode;
 }
