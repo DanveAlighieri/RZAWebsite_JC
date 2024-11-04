@@ -17,5 +17,11 @@ namespace RZAWebsite_JC.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<Customer> LogIn(Customer customer)
+        {
+            return await _context.Customers.FirstOrDefaultAsync(
+                c => c.Username == customer.Username &&
+                c.Password == customer.Password);
+        }
     }
 }

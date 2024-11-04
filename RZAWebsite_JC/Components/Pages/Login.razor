@@ -1,0 +1,53 @@
+﻿@page "/Login"
+@using RZAWebsite_JC.Models
+
+@inject RZAWebsite_JC.Services.CustomerService CustomerService
+@inject NavigationManager NavigationManager
+
+@rendermode InteractiveServer
+
+<PageTitle>Login</PageTitle>
+
+<h3>Login</h3>
+
+<EditForm Model="newCustomer" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Username/Email:</label>
+        <InputText @bind-Value="newCustomer.Username" />
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <InputText @bind-Value="password" type="password" />
+    </div>
+    <button>Log In</button>
+</EditForm>
+
+<div>
+<button>Don't have an account</button>
+</div>
+<div>
+<button>Change Password?</button>
+</div>
+
+@code {
+    private Customer newCustomer = new Customer();
+    private string password;
+
+    private async Task HandleValidSubmit()
+    {
+        newCustomer.Password = password;
+        newCustomer = await CustomerService.LogIn(newCustomer);
+        if (newCustomer == null)
+        {
+            Console.WriteLine("Could not log in");
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/account");
+        }
+    }
+}
