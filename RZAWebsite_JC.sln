@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RZAWebsite_JC", "RZAWebsite_JC\RZAWebsite_JC.csproj", "{08E4CFA1-ECB0-4EFA-8ADD-E3E5CCA9BE78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_Practice1", "UnitTest_Practice1\UnitTest_Practice1.csproj", "{59A7130B-D447-4AD5-9E11-5BE2A84FBF12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{08E4CFA1-ECB0-4EFA-8ADD-E3E5CCA9BE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E4CFA1-ECB0-4EFA-8ADD-E3E5CCA9BE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E4CFA1-ECB0-4EFA-8ADD-E3E5CCA9BE78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A7130B-D447-4AD5-9E11-5BE2A84FBF12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A7130B-D447-4AD5-9E11-5BE2A84FBF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A7130B-D447-4AD5-9E11-5BE2A84FBF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A7130B-D447-4AD5-9E11-5BE2A84FBF12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
