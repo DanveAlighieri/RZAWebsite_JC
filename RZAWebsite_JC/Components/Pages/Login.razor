@@ -1,8 +1,9 @@
 ﻿@page "/Login"
 @using RZAWebsite_JC.Models
-
+@using RZAWebsite_JC.Utilities
 @inject RZAWebsite_JC.Services.CustomerService CustomerService
 @inject NavigationManager NavigationManager
+@inject UserSession UserSesssion
 
 @rendermode InteractiveServer
 
@@ -47,6 +48,7 @@
         }
         else
         {
+            UserSession.UserId = newCustomer.CustomerId;
             NavigationManager.NavigateTo("/account");
         }
     }
