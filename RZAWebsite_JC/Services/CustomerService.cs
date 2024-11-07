@@ -23,5 +23,20 @@ namespace RZAWebsite_JC.Services
                 c => c.Username == customer.Username &&
                 c.Password == customer.Password);
         }
+
+
+        //this is modifies the customers password
+        public async Task ChangePasswordAsync(int customerId, string hashedOldPassword, string hashedNewPassword) 
+        {
+            Customer? customer = await _context.Customers.SingleOrDefaultAsync(
+                c => c.CustomerId == customerId && c.Password == hashedOldPassword);
+            customer.Password = hashedNewPassword;
+            await _context.SaveChangesAsync();
+            if (customer != null) 
+            {
+                customer.Password = hashedNewPassword;
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@
 @using RZAWebsite_JC.Utilities
 @inject RZAWebsite_JC.Services.CustomerService CustomerService
 @inject NavigationManager NavigationManager
-@inject UserSession UserSesssion
+@inject UserSession UserSession
 
 @rendermode InteractiveServer
 
@@ -24,14 +24,14 @@
         <label>Password:</label>
         <InputText @bind-Value="password" type="password" />
     </div>
-    <button>Log In</button>
+    <button type="submit">Log In</button>
 </EditForm>
 
 <div>
-<button>Don't have an account</button>
+    <button onclick=@Register>Don't have an account</button>
 </div>
 <div>
-<button>Change Password?</button>
+<button onclick=@Modify>Change Password?</button>
 </div>
 
 @code {
@@ -51,5 +51,14 @@
             UserSession.UserId = newCustomer.CustomerId;
             NavigationManager.NavigateTo("/account");
         }
+
+    }
+    private void Modify()
+    {
+        NavigationManager.NavigateTo("/Modify");
+    }
+    private void Register()
+    {
+        NavigationManager.NavigateTo("/Register");
     }
 }
