@@ -7,13 +7,8 @@
 
 <MudLayout>
     <MudAppBar>
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        Navigation Bar
-
+        <NavMenu />
     </MudAppBar>
-    <MudDrawer @bind-Open="@_drawerOpen">
-        <NavMenu/>
-    </MudDrawer>
     <MudMainContent>
         @Body
     </MudMainContent>
@@ -27,7 +22,7 @@
     }
 }
 
-<MudThemeProvider Theme="MyCustomTheme" />
+<MudThemeProvider Theme=@MyCustomTheme />
 @code {
     MudTheme MyCustomTheme = new MudTheme()
         {
@@ -37,7 +32,7 @@
                 Secondary = Colors.Green.Accent4,
                 AppbarBackground = Colors.LightGreen.Lighten1,
                 Background = Colors.LightGreen.Lighten4,
-                
+                               
 
             },
             PaletteDark = new PaletteDark()
@@ -47,11 +42,5 @@
                 AppbarBackground = Colors.Green.Darken3,
                 Background = Colors.Green.Darken4
             },
-
-            LayoutProperties = new LayoutProperties()
-            {
-                DrawerWidthLeft = "260px",
-                DrawerWidthRight = "300px"
-            }
         };
 }

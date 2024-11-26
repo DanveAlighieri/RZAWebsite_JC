@@ -23,7 +23,7 @@
         </div>
     }
     <input type="date" min=@DateTime.Now.ToString("yyyy-MM-dd") @bind=@ticketDate>
-    <button>Book Tickets</button>
+    <button @onclick=@NewTickets>Book Tickets</button>
 }
 else
 {
@@ -52,6 +52,7 @@ else
     private void AddTicket(int attractionId)
     {
         Console.WriteLine("AddTicket button was clicked");
+        Console.WriteLine(ticketDate.ToString());
         Ticket newTicket = new Ticket();
         newTicket.AttractionId = attractionId;
         tickets.Add(newTicket);
@@ -62,7 +63,7 @@ else
         Ticketbooking newTicketbooking = new Ticketbooking();
         newTicketbooking.CustomerId = UserSession.UserId;
         newTicketbooking.Date = ticketDate;
-        newTicketbooking.Date = DateOnly.FromDateTime(DateTime.Now);
+        newTicketbooking.DateBooked = DateOnly.FromDateTime(DateTime.Now);
         await TicketBookingService.AddTicketbookingAsync(newTicketbooking);
         foreach (Ticket newTicket in tickets)
         {
