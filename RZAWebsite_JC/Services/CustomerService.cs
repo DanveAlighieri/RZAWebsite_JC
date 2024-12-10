@@ -30,13 +30,21 @@ namespace RZAWebsite_JC.Services
         {
             Customer? customer = await _context.Customers.SingleOrDefaultAsync(
                 c => c.CustomerId == customerId && c.Password == hashedOldPassword);
-            customer.Password = hashedNewPassword;
-            await _context.SaveChangesAsync();
-            if (customer != null) 
+            try
             {
                 customer.Password = hashedNewPassword;
                 await _context.SaveChangesAsync();
+                if (customer != null)
+                {
+                    customer.Password = hashedNewPassword;
+                    await _context.SaveChangesAsync();
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
     }
 }

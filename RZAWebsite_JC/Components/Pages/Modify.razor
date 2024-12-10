@@ -2,6 +2,7 @@
 @using RZAWebsite_JC.Services
 @inject UserSession UserSession
 @inject CustomerService CustomerService
+@inject NavigationManager NavigationManager
 
 @rendermode InteractiveServer
 
@@ -26,6 +27,13 @@
         if (oldPassword == oldPasswordConfirm)
         {
             await CustomerService.ChangePasswordAsync(UserSession.UserId, oldPassword, newPassword);
+        }
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        if (UserSession.UserId == 0)
+        {
+            NavigationManager.NavigateTo("/Login");
         }
     }
 }

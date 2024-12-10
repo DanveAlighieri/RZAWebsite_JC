@@ -7,9 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Images\" />
-    <Folder Include="wwwroot\css\" />
-    <Folder Include="wwwroot\js\" />
+    <Content Include="Properties\wwwroot\app.css" />
+    <Content Include="Properties\wwwroot\bootstrap\bootstrap.min.css" />
+    <Content Include="Properties\wwwroot\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Properties\wwwroot\favicon.png" />
+    <Content Include="Properties\wwwroot\Images\Chameleon image.jpeg" />
+    <Content Include="Properties\wwwroot\Images\Hummingbird image.jpg" />
+    <Content Include="Properties\wwwroot\Images\Image Sources.txt" />
+    <Content Include="Properties\wwwroot\Images\Logo.jpg" />
+    <Content Include="Properties\wwwroot\Images\Parrot Image.jpeg" />
+    <Content Include="Properties\wwwroot\Images\Tiger Image.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\wwwroot\css\" />
+    <Folder Include="Properties\wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>
