@@ -24,6 +24,8 @@
     }
     <input type="date" min=@DateTime.Now.ToString("yyyy-MM-dd") @bind=@ticketDate>
     <button @onclick=@NewTickets>Book Tickets</button>
+    <br />
+    <MudAlert Severity="alertSeverity" Variant="Variant.Outlined">@message</MudAlert>
 }
 else
 {
@@ -32,10 +34,13 @@ else
 
 
 @code {
-    List<Attraction> attractions;
-    List<Ticket> tickets;
+    List<Attraction>? attractions;
+    List<Ticket>? tickets;
     DateOnly ticketDate;
-    Ticketbooking newTicketbooking;
+    Ticketbooking? newTicketbooking;
+    private Severity alertSeverity;
+    private string message = string.Empty;
+
     protected override async Task OnInitializedAsync()
     {
         if (UserSession.UserId == 0)
@@ -68,7 +73,11 @@ else
         foreach (Ticket newTicket in tickets)
         {
             newTicket.Ticketbooking = newTicketbooking;
-            await TicketService.AddTicketAsync(newTicket);
+            await TicketService.AddTicketAsync(newTicket); 
+        
         }
+        tickets.Clear();
+        message = "Ticket successfully added";
+        alertSeverity = Severity.Success;
     }
 }
