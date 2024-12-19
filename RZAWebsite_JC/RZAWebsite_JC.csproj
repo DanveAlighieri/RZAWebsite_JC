@@ -7,21 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Properties\wwwroot\app.css" />
-    <Content Include="Properties\wwwroot\bootstrap\bootstrap.min.css" />
-    <Content Include="Properties\wwwroot\bootstrap\bootstrap.min.css.map" />
-    <Content Include="Properties\wwwroot\favicon.png" />
-    <Content Include="Properties\wwwroot\Images\Chameleon image.jpeg" />
-    <Content Include="Properties\wwwroot\Images\Hummingbird image.jpg" />
-    <Content Include="Properties\wwwroot\Images\Image Sources.txt" />
-    <Content Include="Properties\wwwroot\Images\Logo.jpg" />
-    <Content Include="Properties\wwwroot\Images\Parrot Image.jpeg" />
-    <Content Include="Properties\wwwroot\Images\Tiger Image.jpeg" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Properties\wwwroot\css\" />
-    <Folder Include="Properties\wwwroot\js\" />
+    <None Include="wwwroot\app.css" />
+    <None Include="wwwroot\bootstrap\bootstrap.min.css" />
+    <None Include="wwwroot\bootstrap\bootstrap.min.css.map" />
+    <None Include="wwwroot\favicon.png" />
+    <None Include="wwwroot\Images\Chameleon image.jpeg" />
+    <None Include="wwwroot\Images\Hummingbird image.jpg" />
+    <None Include="wwwroot\Images\Image Sources.txt" />
+    <None Include="wwwroot\Images\Logo.jpg" />
+    <None Include="wwwroot\Images\Parrot Image.jpeg" />
+    <None Include="wwwroot\Images\Tiger Image.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
